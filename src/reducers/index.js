@@ -1,5 +1,5 @@
 // burada actions/index.js'de export ettiğimiz büyük harfle yazılan değişkenleri import ediyoruz
-import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, UPDATE_DISPLAY, CLEAR_DISPLAY, CHANGE_OVERWRITE, SAVE_TO_MEMORY, GET_FROM_MEMORY, CLEAR_MEMORY, CLEAR_EVERYTHING, EQUALS } from './../actions';
+import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, UPDATE_DISPLAY, CLEAR_DISPLAY, CHANGE_OVERWRITE, SAVE_TO_MEMORY, GET_FROM_MEMORY, CLEAR_MEMORY, CLEAR_EVERYTHING, EQUALS, SQUARE_ROOT } from './../actions';
 
 // bu bizim reducer'ı başlatırken kullanacağımız ilk state hali. CE'ye bastığımızda da bunu kullanmak gerekti
 export const initialState = {
@@ -108,6 +108,15 @@ const reducer = (state, action) => {
         ...state,
         total: result,
         display: result.toString()
+      });
+    case (SQUARE_ROOT):
+    // eşittir düğmesine basıldığında state'i bu şekilde güncelliyoruz.
+    // burada yapılacak işlemi state'deki operatörden çekiyoruz
+      let rootResult = Math.sqrt(state.total)
+      return ({
+        ...state,
+        total: rootResult,
+        display: rootResult.toString()
       });
 
     default:

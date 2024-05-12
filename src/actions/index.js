@@ -10,6 +10,7 @@ export const GET_FROM_MEMORY = "GET_FROM_MEMORY";
 export const CLEAR_MEMORY = "CLEAR_MEMORY";
 export const CLEAR_EVERYTHING = "CLEAR_EVERYTHING";
 export const EQUALS = "EQUALS";
+export const SQUARE_ROOT = "SQUARE_ROOT";
 
 // küçük harfle yazılanlar da reducer'a gönderilecen action'ın tamamını halleden fonksiyonlar.
 // mesela addOne fonksiyonu reducer'a sadece ADD_ONE type'ında bir action gönderiyor. reducers/index.js altında bu tip gelince ne oluyor bakılabilir
@@ -54,4 +55,7 @@ export const clearEverything = () => {
 
 export const equals = () => {
   return ({ type: EQUALS });
+}
+export const squareRoot = () => {
+  return ({ type: SQUARE_ROOT });
 }

@@ -5,7 +5,7 @@ import CalcButton from './components/CalcButton';
 // burada reducer formülünü ve state'in ilk halini import ediyoruz
 import reducer, { initialState } from './reducers';
 // burada kullanacağımız formülleri import ediyoruz
-import { clearDisplay, updateDisplay, changeOperation, applyNumber, changeNumberOverwrite, saveToMemory, getFromMemory, clearMemory, clearEverything, equals } from './actions';
+import { clearDisplay, updateDisplay, changeOperation, applyNumber, changeNumberOverwrite, saveToMemory, getFromMemory, clearMemory, clearEverything, equals, squareRoot } from './actions';
 
 function App() {
 
@@ -67,6 +67,9 @@ function App() {
       case ("CE"):
         dispatchReducer(clearEverything());
         break;
+      case ("\u221a"):
+        dispatchReducer(squareRoot());
+        break;
       default:
         break;
     }
@@ -95,7 +98,7 @@ function App() {
               <CalcButton value={"M+"} onClick = {shortCutHandler} />
               <CalcButton value={"MR"} onClick = {shortCutHandler} />
               <CalcButton value={"MC"} onClick = {shortCutHandler} />
-              <CalcButton value={"?"} />
+              <CalcButton value={"\u221a"} onClick={shortCutHandler} />
             </div>
 
             <div className="row">

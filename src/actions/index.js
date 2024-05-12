@@ -1,7 +1,10 @@
+import { type } from "@testing-library/user-event/dist/type";
+
 export const ADD_ONE = "ADD_ONE";
 export const CLEAR_DISPLAY = "CLEAR_DISPLAY";
 export const APPLY_NUMBER = "APPLY_NUMBER";
 export const CHANGE_OPERATION = "CHANGE_OPERATION";
+export const MEMORY_UPDATE ="MEMORY_UPDATE"
 
 export const addOne = () => {
   return { type: ADD_ONE };
@@ -21,3 +24,7 @@ export const changeOperation = (operation) => {
     return { type: "INVALID_OPERATION" };
   }
 };
+
+export const updateMemory = (NumberToBeSaved) => {
+  return {type: MEMORY_UPDATE, payload: NumberToBeSaved}
+}

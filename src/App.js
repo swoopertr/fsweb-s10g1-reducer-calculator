@@ -7,16 +7,15 @@ import { addOne, applyNumber } from "./actions";
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  // const handleAddOneClick = () => {
-  //   dispatch(addOne());
-  // }
-
   const handleApplyNumberClick = (number) => {
-    debugger
-    dispatch(applyNumber(number));
+    const parsedNumber = parseInt(number, 10); // Parse the value as an integer
+    if (!isNaN(parsedNumber)) { // Check if parsing was successful
+      dispatch(applyNumber(parsedNumber)); // Dispatch the parsed number
+    } else {
+      console.error("Invalid number:", number); // Log an error if parsing failed
+    }
   }
-
+  
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">

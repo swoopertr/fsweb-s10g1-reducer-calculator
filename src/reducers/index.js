@@ -110,8 +110,7 @@ const reducer = (state, action) => {
         display: result.toString()
       });
     case (SQUARE_ROOT):
-    // eşittir düğmesine basıldığında state'i bu şekilde güncelliyoruz.
-    // burada yapılacak işlemi state'deki operatörden çekiyoruz
+    // squareRoot düğmesine basıldığında state'i bu şekilde güncelliyoruz.
       let rootResult = Math.sqrt(state.total)
       return ({
         ...state,

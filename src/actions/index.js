@@ -5,6 +5,8 @@ export const CLEAR_DISPLAY = "CLEAR_DISPLAY";
 export const APPLY_NUMBER = "APPLY_NUMBER";
 export const CHANGE_OPERATION = "CHANGE_OPERATION";
 export const MEMORY_UPDATE ="MEMORY_UPDATE"
+export const CLEAR_MEMORY ="CLEAR_MEMORY"
+export const MEMORY_TOTAL_EQUALIZE = "MEMORY_TOTAL_EQUALIZE"
 
 export const addOne = () => {
   return { type: ADD_ONE };
@@ -27,4 +29,12 @@ export const changeOperation = (operation) => {
 
 export const updateMemory = (NumberToBeSaved) => {
   return {type: MEMORY_UPDATE, payload: NumberToBeSaved}
+}
+
+export const clearMemory = () => {
+  return {type: CLEAR_MEMORY}
+}
+
+export const memoryTotalEqualizer = () => {
+  return {type: MEMORY_TOTAL_EQUALIZE}
 }

@@ -20,7 +20,8 @@ function App() {
     dispatch(reset())
   };
 
-  const handleMemory = (numberToBeSaved) => {
+  const handleMemory = () => {
+    const numberToBeSaved = state.total
     dispatch(updateMemory(numberToBeSaved))
   };
 
@@ -54,9 +55,9 @@ const handleMemoryEqualizer = () => {
             </div>
 
             <div className="row">
-              <CalcButton value={"M+"} onClick={()=> {handleMemory(state.total)}} />
-              <CalcButton value={"MR"} onClick={()=> handleMemoryEqualizer()} />
-              <CalcButton value={"MC"} onClick={()=>handleResetMemory() } />
+              <CalcButton value={"M+"} onClick={handleMemory} />
+              <CalcButton value={"MR"} onClick={handleMemoryEqualizer} />
+              <CalcButton value={"MC"} onClick={handleResetMemory} />
             </div>
 
             <div className="row">
